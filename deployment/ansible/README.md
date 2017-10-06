@@ -27,6 +27,12 @@ set up:
 
 ## Preparation
 
+Install dependencies (assuming ubuntu):
+
+```
+sudo apt install ansible docker docker-composer
+```
+
 To be able to run these next instructions, you need to have this repo cloned 
 somewhere in your target machine. You can run these basic git clone command:
 
@@ -157,7 +163,7 @@ address as SITEURL.
 After modifying the necessary variables in `all.yml`, you can run Ansible orchestration
 to generate all the files and docker-compose.yml file needed to spin up the instance.
 
-Run this shortcut command here from `deployment/` folder:
+Run these commands here from `deployment/` folder as *sudo*:
 Note that, in step `make setup-ansible`, you can just press enter when asked 
 about default PyCharm installation, because we didn't use it in this case.
 
@@ -172,12 +178,12 @@ make collectstatic
 
 Explanation:
 
-`make setup-ansible` will create all necessary files for deployment
-`make build-geonode-core` will build geonode docker container as base image
-`make build` will build all the services for this orchestration
-`make up` will spin up all docker containers services
-`make sync` will initiate first database migrations
-`make collectstatic` will initiate first static files generation.
+ - `make setup-ansible` will create all necessary files for deployment
+ - `make build-geonode-core` will build geonode docker container as base image
+ - `make build` will build all the services for this orchestration
+ - `make up` will spin up all docker containers services
+ - `make sync` will initiate first database migrations
+ - `make collectstatic` will initiate first static files generation.
 
 If you already pass through this stages, simply use `make down` to shutdown all 
 containers, and `make up` again to spin up containers. Everything else is just 
