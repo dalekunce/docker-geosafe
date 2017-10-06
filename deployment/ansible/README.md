@@ -163,7 +163,7 @@ address as SITEURL.
 After modifying the necessary variables in `all.yml`, you can run Ansible orchestration
 to generate all the files and docker-compose.yml file needed to spin up the instance.
 
-Run these commands here from `deployment/` folder as *sudo*:
+Run these commands from `deployment/` folder as *sudo*:
 Note that, in step `make setup-ansible`, you can just press enter when asked 
 about default PyCharm installation, because we didn't use it in this case.
 
